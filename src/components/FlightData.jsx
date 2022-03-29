@@ -66,15 +66,31 @@ function FlightData() {
 
         <h3> Flight Number: {x.flight.number}</h3>
         
-        <h3> Status: {x.flight_status}</h3> 
+        { x.flight_status === "landed" && <h3> Status: <span id="landed">{x.flight_status}</span></h3> }  
 
-        <h3> Departs from: {x.departure.airport}</h3>
+        { x.flight_status === "active" && <h3> Status: <span id="active">In Flight</span></h3> }  
 
-        <h3> Arrives at: {x.arrival.airport}</h3>
+        { x.flight_status === "scheduled" && <h3> Status: <span id="scheduled">Scheduled</span></h3> }   
 
-        <h3> Terminal: {x.departure.terminal}</h3>
+        { x.flight_status === "cancelled" && <h3> Status: <span id="cancelled">Cancelled</span></h3> }
+
+        <h3>{x.flight_date}</h3>     
+
+        <h1>Departs</h1>
+
+        <h3> Airport: {x.departure.airport}</h3>   
+
+        {x.departure.terminal === null ? <h3>Terminal: Not Available</h3> : <h3>Terminal: {x.departure.terminal}</h3>}
 
         <h3> Gate: {x.departure.gate}</h3>
+
+        <h1>Arrives</h1>
+
+        <h3> Airport: {x.arrival.airport}</h3>
+
+        {x.arrival.terminal === null ? <h3>Terminal: Not Available</h3> : <h3>Terminal: {x.arrival.terminal}</h3>}
+
+        <h3> Gate: {x.arrival.gate}</h3>
 
         
         
