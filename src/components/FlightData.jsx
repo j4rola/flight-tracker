@@ -66,7 +66,7 @@ function FlightData() {
 
         <h3> Flight Number: {x.flight.number}</h3>
         
-        <h3> Status: {x.flight_status}</h3>
+        <h3> Status: {x.flight_status}</h3> 
 
         <h3> Departs from: {x.departure.airport}</h3>
 

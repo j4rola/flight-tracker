@@ -10,7 +10,7 @@ function Header() {
             
             <h1><FaPlane id="plane"/> Flight Tracker</h1>
         
-        </div>
+        </div> 
     </>
   )
 }
