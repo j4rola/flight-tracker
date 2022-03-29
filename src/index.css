@@ -46,6 +46,7 @@ code {
   padding: 0px 55px 0px 55px;
   margin-top: 10vh;
   padding-top: 5vh;
+  padding-bottom: 5vh;
 
 }
 
@@ -64,4 +65,12 @@ form {
 input {
   padding: 5px;
   margin: 5px;
+}
+
+#flight-wrapper {
+  background-color: rgb(246, 248, 248);
+  border: .5px solid rgb(203, 203, 203);
+  border-radius: 10px;
+  margin: 15px;
+  padding: 20px;
 }

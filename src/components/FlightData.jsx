@@ -21,7 +21,7 @@ function FlightData() {
 
     async function getFlight() {
 
-        const url = process.env.REACT_APP_URL + process.env.REACT_APP_API_KEY 
+        const url = process.env.REACT_APP_URL + process.env.REACT_APP_API_KEY + `&flight_number=${flightNumber}` + `&airline=${airline}`
         
         try {
           console.log(airline, flightNumber)
@@ -52,7 +52,7 @@ function FlightData() {
 
 
   return (
-    <div id="flights">FlightData 
+    <div id="flights">Enter Your Information 
 
         <form >
             <input type="text" name="airline" onChange={onChange} value={airline} placeholder='Airline' />    
@@ -60,7 +60,7 @@ function FlightData() {
         </form>  
         <button id="btn"  onClick={() => getFlight()}>Get Flight</button>    
         
-        {flights && flights.map(x => <div>
+        {flights && flights.map(x => <div id="flight-wrapper">
             
         <h3> Airline: {x.airline.name}</h3>
 
@@ -68,7 +68,14 @@ function FlightData() {
         
         <h3> Status: {x.flight_status}</h3>
 
-        <h3> Departs from: {x.arrival.airport}</h3>
+        <h3> Departs from: {x.departure.airport}</h3>
+
+        <h3> Arrives at: {x.arrival.airport}</h3>
+
+        <h3> Terminal: {x.departure.terminal}</h3>
+
+        <h3> Gate: {x.departure.gate}</h3>
+
         
         
         </div>)}  
