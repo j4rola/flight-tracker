@@ -21,7 +21,7 @@ function FlightData() {
 
     async function getFlight() {
 
-        const url = process.env.REACT_APP_URL + process.env.REACT_APP_API_KEY
+        const url = process.env.REACT_APP_URL + process.env.REACT_APP_API_KEY 
         
         try {
           console.log(airline, flightNumber)
@@ -53,15 +53,16 @@ function FlightData() {
 
   return (
     <div id="flights">FlightData 
+
         <form >
             <input type="text" name="airline" onChange={onChange} value={airline} placeholder='Airline' />    
             <input type="text" name="flightNumber" onChange={onChange} value={flightNumber} placeholder='Flight Number' />    
         </form>  
-        <button id="btn"  onClick={() => getFlight()}>Get Flight</button>   
+        <button id="btn"  onClick={() => getFlight()}>Get Flight</button>    
         
         {flights && flights.map(x => <div>
             
-        <h3>Airline: {x.airline.name}</h3>
+        <h3> Airline: {x.airline.name}</h3>
 
         <h3> Flight Number: {x.flight.number}</h3>
         
