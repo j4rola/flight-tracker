@@ -38,15 +38,13 @@ function FlightData() {
     let data 
 
 
-    async function getFlight() {
+    async function getFlight() {   
 
         const url = process.env.REACT_APP_URL + process.env.REACT_APP_API_KEY + `&flight_number=${flightNumber}` + `&airline=${airline}`
         
         try {
-          console.log(airline, flightNumber)
           const response = await axios.get(url);    
           data = response.data.data  
-          console.log(data)  
           const flight = data.filter(x => { return x.flight.number === flightNumber && x.airline.name === airline})  
           updateFlights(flight) 
           
@@ -77,6 +75,7 @@ function FlightData() {
             <input type="text" name="airline" onChange={onChange} value={airline} placeholder='Airline' />    
             <input type="text" name="flightNumber" onChange={onChange} value={flightNumber} placeholder='Flight Number' />    
         </form>  
+        <h4 id="desc">Example: American Airlines, 1004</h4>
         <button id="btn"  onClick={() => getFlight()}>Get Flight</button>    
         
         {flights && flights.map(x => <div id="flight-wrapper">  

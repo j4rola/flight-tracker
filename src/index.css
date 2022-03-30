@@ -91,3 +91,7 @@ input {
 #cancelled {
   color: red
 }
+
+#desc {
+  color: rgb(118, 118, 118)
+}
