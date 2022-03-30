@@ -3,7 +3,6 @@ import { useState } from 'react';
 const convertMilitary = (time) => {  
 	let arr = [ ]  
 	const spread = [...time]  
-    console.log(spread) 
     const t = spread.indexOf("T")    
   
   if(parseInt(spread[t + 1] + spread[t + 2]) > 11 ) {
@@ -11,12 +10,22 @@ const convertMilitary = (time) => {
   } else {spread.push('am')} 
   
   
-  if (parseInt(spread[t + 1] + spread[t + 2]) > 12) {
+  if (parseInt(spread[t + 1] + spread[t + 2]) > 12) 
+   {
     const number = parseInt(spread[t + 1] + spread[t + 2]) - 12
   	arr.push("0", number.toString(), spread[t + 3], spread[t + 4], spread[t + 5], spread[spread.length -1])
     return arr.join("")
-  } else {arr.push(spread[t+1], spread[t + 2], spread[t + 3], spread[t + 4], spread[t + 5], spread[spread.length -1]) 
-    return arr.join("")} 
+   }
+    else 
+
+    {   
+    if (parseInt(spread[t + 1] + spread[t + 2]) === 0) {
+        arr.push("1", "2", spread[t + 3], spread[t + 4], spread[t + 5], spread[spread.length -1]) 
+    return arr.join("") 
+    }
+    arr.push(spread[t+1], spread[t + 2], spread[t + 3], spread[t + 4], spread[t + 5], spread[spread.length -1]) 
+    return arr.join("") 
+    } 
   
 }
 
