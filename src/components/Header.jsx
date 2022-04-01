@@ -6,7 +6,7 @@ function Header() {
   return (
     <>
         
-        <div id="header">
+        <div id="header">   
             
             <h1><FaPlane id="plane"/> Flight Tracker</h1>
         
